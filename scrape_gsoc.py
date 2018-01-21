@@ -8,13 +8,19 @@ import re
 import time
 import urllib3
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 from bs4 import BeautifulSoup
 from lxml import html
 
+
 ###########################################################################
+## Disable SSL verification related warnings
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+###########################################################################
+
 ## Open the two csv files in write mode
 f = open('gsoc_data.csv', 'w')
 gsoc_data_csv = csv.writer(f, lineterminator='\n')
