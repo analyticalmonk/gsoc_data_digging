@@ -1,5 +1,4 @@
 *.png
-*.csv
 *.Rproj*
 /Data
 *.Rhistory
